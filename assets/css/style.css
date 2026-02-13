@@ -459,12 +459,17 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
+  background: hsla(240, 2%, 12%, 0.95); /* Matches your dark theme */
   backdrop-filter: blur(10px);
-  border: 1px solid var(--jet);
-  border-radius: 12px 12px 0 0;
-  box-shadow: var(--shadow-2);
-  z-index: 5;
+  border-top: 1px solid var(--jet);
+  border-radius: 20px 20px 0 0;
+  padding: 5px 0;
+  z-index: 10;
+}
+
+.navbar-link {
+  font-size: 12px; /* Small but readable for mobile */
+  padding: 15px 10px;
 }
 
 .navbar-list {
@@ -1221,7 +1226,27 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 .form-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
 
+/**
+ * MOBILE FIXES: Ensure profile is viewable
+ */
 
+/* Allow the sidebar to expand naturally on mobile */
+.sidebar {
+  max-height: 112px; /* Default collapsed height */
+  height: auto;
+  transition: max-height 0.5s ease-in-out;
+}
+
+/* Ensure the card expands enough to show all contact info */
+.sidebar.active { 
+  max-height: 500px; 
+}
+
+/* Adjust avatar size for better fit on small screens */
+.avatar-box img {
+  width: 80px; /* Reduced from 150px for mobile */
+  margin: auto;
+}
 
 
 
@@ -1598,3 +1623,18 @@ article {
   gap: 10px;
   padding: 15px;
 }
+
+/* Remove excessive margins and add space for the bottom navbar */
+main {
+  margin: 10px 10px 100px 10px; /* Added large bottom margin (100px) */
+  min-width: auto;
+  width: auto;
+}
+
+/* Ensure the article (About Me) uses full width */
+.sidebar, 
+article {
+  width: 100%;
+  padding: 20px;
+}
+
