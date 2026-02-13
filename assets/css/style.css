@@ -1226,28 +1226,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 .form-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
 
-/**
- * MOBILE FIXES: Ensure profile is viewable
- */
-
-/* Allow the sidebar to expand naturally on mobile */
-.sidebar {
-  max-height: 112px; /* Default collapsed height */
-  height: auto;
-  transition: max-height 0.5s ease-in-out;
-}
-
-/* Ensure the card expands enough to show all contact info */
-.sidebar.active { 
-  max-height: 500px; 
-}
-
-/* Adjust avatar size for better fit on small screens */
-.avatar-box img {
-  width: 80px; /* Reduced from 150px for mobile */
-  margin: auto;
-}
-
 
 
 /*-----------------------------------*\
@@ -1624,17 +1602,5 @@ article {
   padding: 15px;
 }
 
-/* Remove excessive margins and add space for the bottom navbar */
-main {
-  margin: 10px 10px 100px 10px; /* Added large bottom margin (100px) */
-  min-width: auto;
-  width: auto;
-}
 
-/* Ensure the article (About Me) uses full width */
-.sidebar, 
-article {
-  width: 100%;
-  padding: 20px;
-}
 
