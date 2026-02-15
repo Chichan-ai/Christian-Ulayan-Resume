@@ -1764,7 +1764,7 @@ textarea.form-input::-webkit-resizer { display: none; }
  * responsive larger than 1250px screen
  */
 
-@media (min-width: 1100px) {
+@media (min-width: 1250px) {
 
   /**
    * RESET
@@ -1967,7 +1967,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 100px){
   .modal-content {
     width: 100%;
   }
