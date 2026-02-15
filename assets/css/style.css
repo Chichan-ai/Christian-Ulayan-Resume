@@ -1871,8 +1871,11 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .social-list { justify-content: center; }
 
-
-
+  .sidebar-info img {
+    width: 150px; /* Or whatever size you used locally */
+    height: auto;
+    border-radius: 20px;
+  }
   /**
 	 * RESUME
 	 */
