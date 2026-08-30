@@ -17,43 +17,11 @@
 
 :root {
 
-  /* ... keep all your existing variables inside :root ... */
+  /* Default Dark Mode additions */
+  --glass-bg: hsla(240, 1%, 17%, 0.75);
+  --input-bg: transparent;
 
-  :root {
-   /* Default Dark Mode additions */
-   --glass-bg: hsla(240, 1%, 17%, 0.75);
-   --input-bg: transparent;
-   --jet: hsl(0, 0%, 22%);
-   --text-gradient-yellow: linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
-  }
-
-  body.light-mode {
-   /* Core Colors */
-   --smoky-black: hsl(0, 0%, 95%);
-   --eerie-black-2: hsl(0, 0%, 100%);
-   --eerie-black-1: hsl(0, 0%, 90%);
-   --jet: hsl(0, 0%, 80%);
-   --onyx: hsl(0, 0%, 85%);
-   --white-2: hsl(240, 5%, 15%); 
-   --white-1: hsl(240, 5%, 10%);
-   --light-gray: hsl(240, 2%, 30%);
-   --light-gray-70: hsla(240, 2%, 30%, 0.7);
-  
-   /* Adaptive Gradients */
-   --bg-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 100%) 3%, hsl(0, 0%, 90%) 97%);
-   --bg-gradient-jet: linear-gradient(to bottom right, hsla(0, 0%, 100%, 0.5) 0%, hsla(0, 0%, 100%, 0) 100%), hsl(0, 0%, 98%);
-   --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 80%) 0%, hsla(0, 0%, 80%, 0) 50%);
-   --bg-gradient-yellow-1: linear-gradient(to bottom right, hsl(45, 100%, 71%) 0%, hsla(36, 100%, 69%, 0) 50%);
-   --text-gradient-yellow: linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
-  
-   /* Shadows & Glass */
-   --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.1);
-   --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.1);
-   --glass-bg: hsla(0, 0%, 100%, 0.75);
-   --input-bg: hsl(0, 0%, 98%);
-  }
-
- --bg-gradient-onyx: linear-gradient(
+  --bg-gradient-onyx: linear-gradient(
     to bottom right, 
     hsl(240, 1%, 25%) 3%, 
     hsl(0, 0%, 19%) 97%
@@ -139,32 +107,37 @@
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
 
-  /* Existing variables in style.css are for dark mode */
-  body {
+}
+
+body {
   background: var(--smoky-black);
   transition: background 0.5s ease; /* Smooth transition */
-  }
+}
 
-  /* Add these Light Mode overrides at the end of your CUSTOM PROPERTY section */
-  body.light-mode {
-   --smoky-black: hsl(0, 0%, 95%);
-   --eerie-black-2: hsl(0, 0%, 100%);
-   --eerie-black-1: hsl(0, 0%, 90%);
-   --jet: hsl(0, 0%, 80%);
-   --onyx: hsl(0, 0%, 85%);
-   --white-2: hsl(0, 0%, 10%);
-   --light-gray: hsl(0, 0%, 20%);
-   --light-gray-70: hsla(0, 0%, 20%, 0.7);
-  }
+/* Light Mode overrides */
+body.light-mode {
+  --smoky-black: hsl(0, 0%, 95%);
+  --eerie-black-2: hsl(0, 0%, 100%);
+  --eerie-black-1: hsl(0, 0%, 90%);
+  --jet: hsl(0, 0%, 80%);
+  --onyx: hsl(0, 0%, 85%);
+  --white-2: hsl(240, 5%, 15%);
+  --white-1: hsl(240, 5%, 10%);
+  --light-gray: hsl(240, 2%, 30%);
+  --light-gray-70: hsla(240, 2%, 30%, 0.7);
 
-  /* Style for the toggle button */
- .theme-toggle-btn {
-   font-size: 20px;
-   color: var(--orange-yellow-crayola);
-   padding: 10px;
-   border-radius: 12px;
-    transition: var(--transition-1);
-  }
+  /* Adaptive Gradients */
+  --bg-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 100%) 3%, hsl(0, 0%, 90%) 97%);
+  --bg-gradient-jet: linear-gradient(to bottom right, hsla(0, 0%, 100%, 0.5) 0%, hsla(0, 0%, 100%, 0) 100%), hsl(0, 0%, 98%);
+  --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 80%) 0%, hsla(0, 0%, 80%, 0) 50%);
+  --bg-gradient-yellow-1: linear-gradient(to bottom right, hsl(45, 100%, 71%) 0%, hsla(36, 100%, 69%, 0) 50%);
+  --text-gradient-yellow: linear-gradient(to right, hsl(45, 100%, 72%), hsl(35, 100%, 68%));
+
+  /* Shadows & Glass */
+  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.1);
+  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.1);
+  --glass-bg: hsla(0, 0%, 100%, 0.75);
+  --input-bg: hsl(0, 0%, 98%);
 }
 
 
@@ -1988,40 +1961,33 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 /**
-   * PORTFOLIO
+   * Portfolio image modal styles (see #MOBILE & TOUCH ENHANCEMENTS below).
+   */
+/**
+   * PORTFOLIO IMAGE MODAL
    */
 
-body {font-family: Arial, Helvetica, sans-serif;}
-
-#myImg {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#myImg:hover {opacity: 0.7;}
-
 /* The Modal (background) */
-.modal {
+#myModal {
   display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  position: fixed;
+  z-index: 100; /* Above the navbar (10) and cards (20) */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  width: 100%;
+  height: 100%;
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  background-color: rgba(0, 0, 0, 0.9);
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Modal Content (image) */
-.modal-content {
+#img01 {
   margin: auto;
   display: block;
   width: 80%;
   max-width: 700px;
+  border-radius: 10px;
 }
 
 /* Caption of Modal Image */
@@ -2033,11 +1999,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
   text-align: center;
   color: #ccc;
   padding: 10px 0;
-  height: 150px;
+  font-size: 14px;
 }
 
 /* Add Animation */
-.modal-content, #caption {  
+#img01,
+#caption {
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 0.6s;
   animation-name: zoom;
@@ -2045,125 +2012,172 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 @-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
+  from { -webkit-transform: scale(0); }
+  to { -webkit-transform: scale(1); }
 }
 
 @keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
+  from { transform: scale(0); }
+  to { transform: scale(1); }
 }
 
 /* The Close Button */
 .close {
-  position: absolute;
+  position: fixed;
   top: 15px;
-  right: 35px;
+  right: 20px;
   color: #f1f1f1;
   font-size: 40px;
   font-weight: bold;
+  line-height: 1;
+  z-index: 5;
   transition: 0.3s;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 12px 16px; /* Generous tap area on mobile */
+  border-radius: 8px;
 }
 
 .close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
+.close:focus { color: #bbb; }
 
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
+@media only screen and (max-width: 700px) {
+  #img01 { width: 100%; }
+  #myModal { padding-top: 70px; }
 }
-/**
-   * PORTFOLIOMODAL
-   */
+
+
+
+/*-----------------------------------*\
+  #MOBILE & TOUCH ENHANCEMENTS
+\*-----------------------------------*/
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: #111;
-    padding: 50px;
-    color: white;
+  overflow-x: hidden;
+}
+
+/* Kill the grey tap-flash on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Remove the 300ms tap delay / accidental double-tap zoom */
+button,
+a,
+.filter-select,
+.select-item button,
+.form-btn,
+.modal-close-btn,
+.close {
+  touch-action: manipulation;
+}
+
+/* Fluid media */
+img,
+video,
+embed,
+object,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Safe-area support for notched phones (bottom navbar is fixed below 1024px) */
+@media (max-width: 1023px) {
+
+  .navbar {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 
-  /* Card */
-  .card {
-    height: 300px;
-    width: 260px;
-    max-width: 200px;
-    background: #1c1c1c;
-    border-radius: 12px;
-    overflow: hidden;
-    position: relative;
+}
+
+/* Use the dynamic viewport height where supported */
+.overlay {
+  height: 100vh;
+  height: 100dvh;
+}
+
+/* Touch devices: always show the eye icon instead of relying on hover */
+@media (hover: none) {
+
+  .project-item-icon-box {
+    --scale: 1;
+    opacity: 0.9;
   }
 
-  .card img {
-    width: 100%;
-    display: block;
+  .project-item > a:hover .project-img::before { background: transparent; }
+
+  .clients-item img { filter: grayscale(0); }
+
+}
+
+/* Compact phones (< 500px) */
+@media (max-width: 499px) {
+
+  /* Sidebar avatar was rendering at 300px on mobile — shrink it */
+  .avatar-box img { width: 80px; }
+
+  .sidebar { max-height: 118px; }
+  .sidebar.active { max-height: 480px; }
+
+  main {
+    margin-bottom: calc(75px + env(safe-area-inset-bottom, 0px));
   }
 
-  /* Eye icon overlay */
-  .eye-btn {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.6);
-    border-radius: 50%;
-    padding: 12px;
-    cursor: pointer;
+  .info-content .name { font-size: 15px; letter-spacing: 0; }
+
+  .info_more-btn { padding: 14px; }
+
+  .navbar-list {
+    gap: 2px;
+    padding: 0 6px;
   }
 
-  .eye-btn:hover {
-    background: rgba(0,0,0,0.8);
+  .navbar-link,
+  .theme-toggle-btn {
+    min-height: 48px;
+    padding: 16px 8px;
+    font-size: 11px;
   }
 
-  .eye-btn span {
-    font-size: 22px;
-    color: gold;
+  .theme-toggle-btn { font-size: 1.15rem; }
+
+  .service-item { padding: 18px; }
+
+  .timeline-list { margin-left: 38px; }
+  .timeline-item:not(:last-child)::before { left: -26px; }
+  .timeline-item::after { left: -29px; }
+
+  .project-img { height: 190px; }
+
+  /* 16px inputs prevent iOS auto-zoom on focus */
+  .form-input { font-size: 16px; }
+
+  .testimonials-avatar-box img { width: 60px; }
+
+  .modal-container { padding: 10px; }
+
+  .mapbox { height: 220px; }
+
+}
+
+/* Landscape phones with short viewport heights */
+@media (max-height: 480px) and (orientation: landscape) {
+
+  .navbar-list { padding: 0 10px; }
+
+  .navbar-link,
+  .theme-toggle-btn {
+    min-height: 44px;
+    padding: 12px 10px;
   }
 
-  /* Card text */
-  .card-info {
-    padding: 12px;
-  }
+  main { margin-bottom: 60px; }
 
-  .title {
-    font-weight: bold;
-    font-size: 16px;
-  }
-
-  .subtitle {
-    font-size: 13px;
-    color: #aaa;
-  }
-
-  /* Modal overlay */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
-  }
-
-  .modal img {
-    display: block;
-    max-width: 600px;
-    margin: 8% auto;
-    border-radius: 10px;
-  }
-
-  .close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 35px;
-    color: white;
-    cursor: pointer;
-  }
+}
